@@ -1,0 +1,11 @@
+import React from "react";
+
+function  Categoria(/*chamo a propriedade da tag de app.tsx aqui*/) { //aqui eh o que eu quero que a tag faça 
+    
+    
+
+return (
+    <h1 categoriaAplicada ="categoria" ></h1>
+)
+}
+export default Categoria; 

@@ -1,0 +1,19 @@
+//export let tentativas = 6;
+let tentativas = 6;
+let listaDinamica = [];
+let palavraSecretaCategoria;
+let palavraSecretaSorteada;
+let palavraSecretaDica0;
+let palavraSecretaDica1;
+let palavraSecretaDica2;
+let palavraSecretaDica3;
+let palavraSecretaDica4;
+let palavraSecretaDica5;
+let palavraSecretaDica6;
+
+
+module.exports = {tentativas, palavraSecretaCategoria, listaDinamica, palavraSecretaSorteada,palavraSecretaDica0, palavraSecretaDica1, palavraSecretaDica2,
+palavraSecretaDica3, palavraSecretaDica4, palavraSecretaDica5, palavraSecretaDica6};
+//export default Variaveis;
+//export  let palavraSecretaCategoria = palavras[indexPalavra].categoria; 
+//export palavraSecretaCategoria = palavras[indexPalavra].categoria; 

@@ -1,0 +1,53 @@
+import React, { useState } from "react";
+import comparalistas from "../mecanismo/comparalistas";
+import montarPalavraNaTela from "../mecanismo/montarPalavraNaTela"
+import { tentativas } from "../mecanismo/variveis";
+
+// class Botao extends React.Component<{ children?: any, type?: "submit" }> {
+//    render() {
+function Botao({ nomeTecla }:any) {
+    const [isDisabled, setIsDisabled] = useState(false)
+    function verificaLetraEscolhida() {
+      setIsDisabled(true) 
+        //  document.getElementById("tecla-" + letra).disabled = true;
+        if (tentativas > 0) {
+            comparalistas(nomeTecla);
+            montarPalavraNaTela();
+        }
+    }
+    // function mudarStyleLetra(tecla) {
+    //     document.getElementById(tecla).style.background = "red";
+    //     document.getElementById(tecla).style.color = "#fff";
+    // }
+
+    //html apartir daqui
+    return (
+        <button disabled={isDisabled} onClick={() => verificaLetraEscolhida()} > {/*preciso do meu onclick ativando as tres funçoes a cima ao mesmo tempo..*/}
+            {nomeTecla}
+        </button>
+    )
+}
+
+export default Botao;
+/*
+    -preciso criar um tecla generica onde em outro arquivo ela vai assumir o papel de teclas de A a Z
+    -entao vou criar o comportamento dela dentro de render
+    -criar o css das teclas num arquivo separado dentro dentro dessa pasta e mais um outro css configurando todas as teclas unidas no arquivo principal
+  
+
+
+  //o constructo de fazer status
+        um componente em js
+               atual        o que muda     o nome do componente  
+    //const [isDisabled, setIsDisabled] = useState()
+  
+    correlacionando objetos/tags
+      (1)       (2)       (3)
+    <Botao name="tecla-A"> A </Botao>
+              (1)     (2)     (3)
+    function Botao("tecla-A") {A}
+
+    1- declaraçao/parent da tag/funçao/objeto
+    2- propiedade ou parametro(funcionam da mesma forma)
+    3- children
+*/

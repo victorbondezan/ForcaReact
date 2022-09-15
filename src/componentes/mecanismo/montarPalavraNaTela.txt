@@ -1,0 +1,29 @@
+import React from "react";
+
+
+//{ categoriaAplicada }:any
+function montarPalavraNaTela() {
+    var categoria = document.getElementById("categoria")!;
+    categoria.innerHTML = palavraSecretaCategoria;
+    let i = 0 //eu que montei essa let.. 
+
+    const palavraTela = document.getElementById("palavra-secreta")!;
+    palavraTela.innerHTML = "";
+
+    for (i ; i < palavraSecretaSorteada.length; i++) {
+        if (listaDinamica[i] == undefined) {
+            listaDinamica[i]
+            palavraTela.innerHTML = palavraTela.innerHTML + "<div class='letras'>" + listaDinamica[i] + "</div>"
+
+        }
+        else {
+            palavraTela.innerHTML = palavraTela.innerHTML + "<div class='letras'>" + listaDinamica[i] + "</div>"
+        }
+    }
+    montarPalavraNaTela();
+    return {
+       
+    }
+} 
+
+export default montarPalavraNaTela;

@@ -1,0 +1,59 @@
+import {useState, useEffect} from 'react';
+import Head from 'next/head';
+
+export default function App() {
+    const[vida, setVida] = useState(6)
+    const[letras, setLetras] = useState([])
+    const[currentLetras, setCurrentLetras] = useState('')
+    const[letraseErradas, setLetraseErradas] = useState([])
+
+    const verificaPalavra = ({ letras }:any) => {
+        const palavraSecreta = 'carro'
+        return palavraSecreta.indexOf(letras)
+    }
+
+    const confirmarLetra = ({ letras }:any) => {
+        const resultadoVerificaPalavra = verificaPalavra(currentLetras)
+        console.log(resultadoVerificaPalavra)
+        if (resultadoVerificaPalavra === -1) {
+            setVida(vida -1)
+        setLetraseErradas([...letraseErradas, currentLetras])
+
+        } else{
+            let esperarLetra = letras;
+            esperarLetra[resultadoVerificaPalavra] = currentLetras;
+            setLetras([...esperarLetra]);
+        }
+        setCurrentLetras('' )
+
+    }
+
+    useEffect(() => {
+        const quantidadeDeLetras = 5;
+        setLetras([ ...Array(5).fill('_ ')])
+    }, [])
+
+    return(
+        <div>
+         <Head>
+           <title>Jogo da Forca</title>
+           <link rel="icon" href="/favicon.ico" />
+         </Head>
+         <h1>Forca</h1>
+         <h2>Vidas restantes: {vida}</h2>
+         <p>[letras]</p>
+         <input 
+            maxLength="1"
+            placeholder='Digite uma Letra'
+            onChange={e => setCurrentLetras(e.target.value)}
+            valeu={currentLetras} />
+         <button onClick={() => confirmarPalavra()}>confirmar</button>
+         <p>
+            {letraseErradas.map(({ letras }:any, { index }:any) =>(
+                index === 0 ? `${letras}` : `-${letras}`
+            ))}
+         </p>
+        </div>
+    )
+}
+export default App;

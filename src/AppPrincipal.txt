@@ -1,0 +1,64 @@
+import React from 'react';
+//import Botao from './componentes/teclado/botao';
+//import Categoria from './componentes/categoria/categoria'
+//import MontarPalNaTela from './componentes/mecanismo/montarPalavraNaTela'
+
+function App() {
+    return(
+        <div className="App">
+           <div className="container">
+        <div id="imagem"></div>
+        {/* <div id="palavra-secreta"> */}
+        </div>
+
+        {/* <div id="teclado">
+            <div className="teclas"> 
+            
+                <Botao name="tecla-A" type='submit'> A </Botao>
+                <Botao Id= "any" nomeTecla="B" />
+                <Botao nomeTecla="C" />
+                <Botao nomeTecla="D" />
+                <Botao nomeTecla="E" />
+                <Botao nomeTecla="F" />
+                <Botao nomeTecla="G" />
+                <Botao nomeTecla="H" />
+                <Botao nomeTecla="I" />
+            </div>
+            <div className="teclas">
+                <Botao nomeTecla="J" />
+                <Botao nomeTecla="K" />
+                <Botao nomeTecla="L" />
+                <Botao nomeTecla="M" />
+                <Botao nomeTecla="N" />
+                <Botao nomeTecla="O" />
+                <Botao nomeTecla="P" />
+                <Botao nomeTecla="Q" />
+                <Botao nomeTecla="R" />
+            </div>
+            <div className="teclas">
+                <Botao nomeTecla="S" />
+                <Botao nomeTecla="T" />
+                <Botao nomeTecla="U" />
+                <Botao nomeTecla="V" />
+                <Botao nomeTecla="W" />
+                <Botao nomeTecla="X" />
+                <Botao nomeTecla="Ç" />
+                <Botao nomeTecla="Y" />
+                <Botao nomeTecla="Z" />
+                <Botao nomeTecla="-" />☻
+                <Botao id="btnReiniciar" />🎮 
+            </div> 
+        </div>*/}
+        {/*funçao categoria aqui*/}
+        {/**/}
+
+        </div>
+        {/* <MontarPalNaTela categoriaAplicada ="categoria" ></MontarPalNaTela> */}
+        {/* <h2 id='dica'></h2> */}
+        </div>
+        
+    );
+}
+export default App;
+
+// onclick em react - onClick={}

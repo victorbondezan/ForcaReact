@@ -1,0 +1,49 @@
+import React from "react";
+import carregaImagemForca from "../imagemForca/imagensForca";
+import abreModal from "../imagemForca/modal"
+import palavraSecretaSorteada from "../teclado/criarPalavraSecreta"  //ta esquisito esse import.. era azul ficou amarelo a variavel, ta faltando a variavel de fato
+//import Variaveis from "./variveis"
+
+
+
+function comparalistas(letra: any) {
+
+    //let tentativas = Variaveis.tentativa;  //nao acho que essa funçao esteja pegando a let no arquivo variaveis correspondente. como pesquiso isso?? 
+    var http = require('http'); // Cria  um servidor HTTP que é hospedado na porta no. 8080.  exemplo de script do lado do servidor do site https://acervolima.com/como-acessar-variaveis-de-outro-arquivo-usando-javascript/.
+    let {tentativas, palavraSecretaCategoria, listaDinamica, palavraSecretaSorteada,palavraSecretaDica0, palavraSecretaDica1, palavraSecretaDica2,
+        palavraSecretaDica3, palavraSecretaDica4, palavraSecretaDica5, palavraSecretaDica6} = require('./variveis');
+
+    let vitoria = true;
+    let i = 0
+    const pos = palavraSecretaSorteada.indexOf(letra)
+    if (pos < 0) {
+        tentativas--
+        carregaImagemForca();
+
+        if (tentativas == 0) {
+            abreModal("OPS!", "Não foi dessa vez ... A palavra secreta era <br>" + palavraSecretaSorteada);
+        }
+    }
+    
+    else {
+        for (i ; i < palavraSecretaSorteada.length; i++) {
+            if (palavraSecretaSorteada[i] == letra) {
+                listaDinamica[i] = letra;
+            }
+        }
+    }
+
+    for (i = 0; i < palavraSecretaSorteada.length; i++) {
+        if (palavraSecretaSorteada[i] != listaDinamica[i]) {
+            vitoria = false;
+        }
+    }
+    
+
+    if (vitoria == true) {
+        abreModal("PARABÉNS!", "Você venceu...");
+        tentativas = 0;
+    }
+}
+
+export default comparalistas;

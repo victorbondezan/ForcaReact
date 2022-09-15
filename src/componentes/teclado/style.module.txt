@@ -1,0 +1,21 @@
+.button{
+    width: 24px;
+    height: 24px;
+    margin: 2px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    box-shadow:  0px 2px 8px dimgray; /*o botao em si*/
+    border-radius: 5px;
+    border: 1px solid darkgoldenrod;  /*uma borda menor em volta do botao*/
+    color: darkgoldenrod;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 900;
+}
+
+.button:disabled{
+    cursor: not-allowed; /*transforma o cursor num icone que representa que a tecla foi desabilitada*/
+}
+
+.button:hover{ /*"zoom no teclado"*/
+    transform:scale(1.3);
+}
